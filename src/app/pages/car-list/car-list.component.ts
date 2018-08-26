@@ -15,7 +15,7 @@ export class CarListComponent implements OnInit {
   public ngOnInit() {
     setTimeout(() => {
       this.getCars();
-    }, 3500);
+    }, 500);
   }
 
   /**

@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 
@@ -38,6 +39,8 @@ import { CreateCarComponent } from './pages/create-car/create-car.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+
     RouterModule.forRoot(ROUTES, {
       useHash: Boolean(history.pushState) === false,
       preloadingStrategy: PreloadAllModules
