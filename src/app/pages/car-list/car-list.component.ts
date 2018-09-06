@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CARS_ARRAY } from './../../constants/cars.constant';
+//import { CARS_ARRAY } from './../../constants/cars.constant';
 import { Car } from './../../interfaces/car.interface';
+import { CarService} from '../../services/car.service';
 import * as _ from 'lodash';
 
 @Component({
@@ -12,6 +13,8 @@ export class CarListComponent implements OnInit {
   public carsArray: Car[];
   public tableView = false;
 
+  constructor(private carService: CarService) {}
+
   public ngOnInit() {
     setTimeout(() => {
       this.getCars();
@@ -22,7 +25,7 @@ export class CarListComponent implements OnInit {
    * Clone array
    */
   public getCars = () => {
-    this.carsArray = _.cloneDeep(CARS_ARRAY);
+    this.carsArray = this.carService.getCarsList()
   }
   /**
    * Filter objects
@@ -78,7 +81,8 @@ export class CarListComponent implements OnInit {
    */
   public onCarRemove = (index: number) => {
     console.log(`Delete car: ${this.carsArray[index].title} ${this.carsArray[index].model}`);
-    this.carsArray.splice(index, 1);
+    this.carService.deleteCar(index);
+    this.getCars();
   }
   /**
    * Change table/grid view

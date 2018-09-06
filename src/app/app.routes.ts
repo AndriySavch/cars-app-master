@@ -16,7 +16,7 @@ export const ROUTES: Routes = [
       { path: '', redirectTo: '/car-list',  pathMatch: 'full'},
       { path: 'car-list', component: CarListComponent },
       { path: 'create-car', component: CreateCarComponent},
-      { path: 'favorites', component: FavoritesComponent }
+      { path: 'favorites', component: FavoritesComponent },
     ]
   },
   {path: '**', component: NotFoundComponent }

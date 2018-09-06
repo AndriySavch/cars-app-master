@@ -90,6 +90,13 @@
     .user-name {
       font-weight: bold;
       font-family: sans-serif;
+
+      cursor: pointer;
+      outline: none;
+      border-radius: 10px;
+      border: 2px solid brown;
+      padding: 0 30px 0 30px;
+      background-color: white;
     }
   }
 }

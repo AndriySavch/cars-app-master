@@ -1,3 +1,31 @@
-<p>
-  login works!
-</p>
+<div class="create-container">
+  <div class="create-holder">
+  <h1>Sign in to CarsApp</h1>
+
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <input
+      type="email"
+      #email="ngModel"
+      placeholder="Username"
+      class="text-input"
+      ngModel
+      name="email"
+      required
+      email>
+    <span class="error-msg" *ngIf="email.invalid && email.touched">Please, enter a valid email</span>
+
+    <input
+      type="password"
+      #password="ngModel"
+      placeholder="password"
+      class="text-input"
+      ngModel
+      name="password"
+      required>
+    <a class="forgot" href="**">Forgot Username/password?</a>
+    <input type="submit" value="Sign up" class="submit" [disabled]="!f.valid">
+  </form>
+  <div class="bottom" >New to CarsApp? <a class="registration" href="http://localhost:4200/create-account">Create an account</a>.
+  </div>
+  </div>
+</div>

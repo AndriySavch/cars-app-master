@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule, PreloadAllModules } from '@angular/router';
+import {ReactiveFormsModule} from '@angular/forms';
 
 import { ROUTES } from './app.routes';
 
@@ -19,6 +20,7 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { CreateCarComponent } from './pages/create-car/create-car.component';
+import { CarService} from './services/car.service';
 
 @NgModule({
   declarations: [
@@ -40,13 +42,14 @@ import { CreateCarComponent } from './pages/create-car/create-car.component';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
 
     RouterModule.forRoot(ROUTES, {
       useHash: Boolean(history.pushState) === false,
       preloadingStrategy: PreloadAllModules
     })
   ],
-  providers: [],
+  providers: [CarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

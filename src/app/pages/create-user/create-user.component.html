@@ -1,3 +1,44 @@
-<p>
-  create-user works!
-</p>
+<div class="create-container">
+  <div class="form-holder">
+    <form [formGroup]="userForm" (ngSubmit)="onCreate()">
+      <div class="form-group">
+        <input
+          type="text"
+          placeholder="First name"
+          formControlName="firstName">
+        <span
+          class="error-msg"
+              *ngIf="userForm.get('firstName').invalid && userForm.get('firstName').touched">Please, enter a valid First name</span>
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          placeholder="Last name"
+          formControlName="lastName">
+        <span class="error-msg"
+              *ngIf="userForm.get('lastName').invalid && userForm.get('lastName').touched">Please, enter a valid Last name</span>
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          placeholder="email"
+          formControlName="email">
+        <span class="error-msg"
+              *ngIf="userForm.get('email').invalid && userForm.get('email').touched">Please, enter a valid email</span>
+      </div>
+      <div class="form-group">
+        <input
+          type="password"
+          placeholder="Password"
+          formControlName="password">
+        <span
+          class="error-msg"
+          *ngIf="userForm.get('password').invalid && userForm.get('password').touched">
+            Password should contain at least 7 characters, for example *Password22*</span>
+      </div>
+      <div class="form-group">
+        <button type="submit" [disabled]="userForm.invalid">Create</button>
+      </div>
+    </form>
+  </div>
+</div>
