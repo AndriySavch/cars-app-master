@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { CARS_ARRAY } from './../../constants/cars.constant';
+import { CARS_ARRAY } from './../../constants/cars.constant';
 import { Car } from './../../interfaces/car.interface';
 import { CarService} from '../../services/car.service';
 import * as _ from 'lodash';
@@ -25,7 +25,7 @@ export class CarListComponent implements OnInit {
    * Clone array
    */
   public getCars = () => {
-    this.carsArray = this.carService.getCarsList()
+    this.carsArray = this.carService.getCarsList();
   }
   /**
    * Filter objects

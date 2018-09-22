@@ -1,5 +1,4 @@
 export const CARS_ARRAY = [
-  //и
   {
     title: 'BMW',
     model: 'M3 wrrter reterte ertertetert erteterte ertert ert er terteterterte erter tertetrertet',
